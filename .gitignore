@@ -1,4 +1,4 @@
-ebin/
+ebin/*.beam
 
 doc/edoc-info
 doc/*.html
