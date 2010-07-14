@@ -36,7 +36,12 @@
 %%% Eunit setup stuff
 
 start_app() ->
+    
     ok = application:start(crypto),
+    case application:start(public_key) of
+        ok -> ok;
+        {error, _} -> ok
+    end,
     ok = application:start(ssl),
     ok = application:start(lhttpc).
 

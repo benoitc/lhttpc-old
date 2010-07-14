@@ -8,3 +8,6 @@ util/*.beam
 cover_report/
 test/*.beam
 test/*.log
+test_ebin/
+logs/
+*.swp

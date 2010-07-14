@@ -99,7 +99,13 @@ test_no(N, Tests) ->
 %%% Eunit setup stuff
 
 start_app() ->
+    
     ok = application:start(crypto),
+    case application:start(public_key) of
+        {error, _} -> ok;
+        _ -> ok
+        
+    end,
     ok = application:start(ssl),
     ok = lhttpc:start().
 
